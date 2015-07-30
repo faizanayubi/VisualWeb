@@ -3,9 +3,8 @@ ob_start();
 define("DEBUG", TRUE);
 
 // 1. define the default path for includes
-//define("APP_PATH", dirname(dirname(__FILE__)));
-
 define("APP_PATH", str_replace(DIRECTORY_SEPARATOR, "/", dirname(__FILE__)));
+define("CDN", "http://cloudstuffs.com/public/assets/");
 
 try {
     
