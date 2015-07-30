@@ -1,22 +1,104 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Visual Web</title>
-        
-        <link rel="stylesheet" href="{echo CDN}css/style.css" />
-        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    </head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="theme-color" content="#2196F3">
 
-    <body>
+        <meta name="description" content="{echo strip_tags($seo->getDescription())}" />
+        <meta name="keywords" content="{echo strip_tags($seo->getKeywords())}">
+        <meta name="copyright" content="SWIFTDEAL ONLINE LLP 2015">
+        <meta name="Robots" content="{echo $seo->getRobots()}">
+        <meta name="Revisit-after" content="1 Day">
+        <link rel="shortcut icon" href="{echo CDN}img/favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/x-icon" href="{echo CDN}img/favicon.ico" />
+
+        <title>{echo $seo->getTitle()}</title>
+
+        <!-- CSS  -->
+        <link href="{echo CDN}css/materialize.css" type="text/css" rel="stylesheet">
+        <link href="{echo CDN}css/style.css" type="text/css" rel="stylesheet" >
+        <link href="{echo CDN}css/font-awesome.min.css" type="text/css" rel="stylesheet" >
+        <script src="{echo CDN}js/modernizr.js"></script> <!-- Modernizr -->
+
+        <!-- facebook -->
+        <meta property="og:title" content="{echo $seo->getTitle()}"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:image" content="{echo $seo->getPhoto()}"/>
+        <meta property="og:url" content="{echo URL}"/>
+        <meta property="og:description" content="{echo strip_tags($seo->getDescription())}"/>
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="{echo URL}">
+        <meta name="twitter:title" content="{echo $seo->getTitle()}">
+        <meta name="twitter:description" content="{echo strip_tags($seo->getDescription())}">
+        <meta name="twitter:image" content="{echo $seo->getPhoto()}">
+    </head>
+    <body id="top" class="scrollspy">
+
+        <!-- Pre Loader -->
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+        </div>
 
         {include layouts/navigation/navigation.html}
         {ayield action}
-        
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="{echo CDN}js/jquery.particleground.min.js"></script>
-        <script type="text/javascript" src="{echo CDN}js/script.js"></script>
+
+
+        <!--Footer-->
+        <footer id="contact" class="page-footer default_color scrollspy">
+            <div class="container">  
+                <div class="row">
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Address</h5>
+                        <ul>
+                            <li class="white-text">406, Sant Nagar East of Kailash</li>
+                            <li class="white-text">New Delhi, New Delhi 110065</li>
+                            <li class="white-text">+91-9891048495</li>
+                        </ul>
+                    </div>
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Projects</h5>
+                        <ul>
+                            <li><a class="white-text" href="http://swiftintern.com/">Swiftintern</a></li>
+                            <li><a class="white-text" href="http://placementboat.org">Placement</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Social</h5>
+                        <ul>
+                            <li>
+                                <a class="white-text" href="https://github.com/swiftdeal">
+                                    <i class="small fa fa-github-square white-text"></i> Github
+                                </a>
+                            </li>
+                            <li>
+                                <a class="white-text" href="https://www.linkedin.com/company/swiftdeal">
+                                    <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright default_color">
+                <div class="container">
+                    &COPY; SwiftDeal Online LLP
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{echo CDN}js/jquery.particleground.min.js"></script>
+        <script src="{echo CDN}js/materialize.js"></script>
+        <script src="{echo CDN}js/init.js"></script>
 
     </body>
 </html>
