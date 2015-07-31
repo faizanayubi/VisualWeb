@@ -48,9 +48,9 @@ namespace SwiftBot {
          * @return object       the XPath object
          */
         public function returnXPathObject($item) {
-            $xmlPageDom = new DomDocument();  // Instantiating a new DomDocument object
+            $xmlPageDom = new \DomDocument();  // Instantiating a new DomDocument object
             @$xmlPageDom->loadHTML($item);  // Loading the HTML from downloaded page    
-            $xmlPageXPath = new DOMXPath($xmlPageDom);  // Instantiating new XPath DOM object    
+            $xmlPageXPath = new \DOMXPath($xmlPageDom);  // Instantiating new XPath DOM object    
             return $xmlPageXPath;  // Returning XPath object
         }
 
