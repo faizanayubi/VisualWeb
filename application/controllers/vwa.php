@@ -12,8 +12,8 @@ class VWA extends Controller {
     
     public function crawl() {
         $this->noview();
-        $scrape = new Scrape('http://swiftintern.com/sitemap.xml');
-        $elements = $scrape->xPathObj->query('//url/loc');
+        $scrape = new Scrape('http://swiftintern.com/');
+        $elements = $scrape->xPathObj->query('//a/@href');
         //echo '<pre>', print_r($elements), '</pre>';
         
         foreach ($elements as $element) {
@@ -26,8 +26,25 @@ class VWA extends Controller {
         $this->JSONview();
     }
     
-    public function getNodesfromURL($urls) {
+    public function getNodesfromURL($url) {
         $this->JSONview();
+        
+        $elementos = array (
+            "nodes"=>array(),
+            "links"=>array(), 
+            "statistics" => array(
+                "nodes" => 0,
+                "links" => 0,
+                "bidireccional_links" => 0,
+            )
+        );
+        
+        $crawler = new Scrape($this->removeWWW($url));
+        
+    }
+    
+    protected function removeWWW($url) {
+        return str_replace("http:\/\/www.", "http:\/\/", $url);
     }
     
     public function noview() {
